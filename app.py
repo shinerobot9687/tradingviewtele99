@@ -7,3 +7,18 @@ app = Flask(__name__)
 def welcome():
     return render_template('index.html')
 
+@app.route('/webhook', methods=['POST'])
+def whatever():
+    data = json.loads(request.data)
+
+    if data['passphrase'] != config.WEBHOOK_PASSPHRASE:
+        return{
+            "code": "error",
+            "message": "Nice try, invalid passphrase"
+        }
+
+    print(data);
+    return {
+        "code": 'success',
+        "message": data
+    }
