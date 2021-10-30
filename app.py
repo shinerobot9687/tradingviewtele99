@@ -18,6 +18,7 @@ def whatever():
         }
 
     print(data);
+    render_template('dddd.html')
     return {
         "code": 'success',
         "message": data
