@@ -5,12 +5,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    
     return render_template('index.html')
 
 @app.route('/webhook', methods=['POST'])
 def whatever():
-    
     data = json.loads(request.data)
-
-    return render_template('listdata.html',read=data)
+    print(data);
+    return data
