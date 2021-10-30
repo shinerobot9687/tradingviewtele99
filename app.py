@@ -9,17 +9,6 @@ def welcome():
 
 @app.route('/webhook', methods=['POST'])
 def whatever():
-    data = json.loads(request.data)
-
-    if data['passphrase'] != config.WEBHOOK_PASSPHRASE:
-        return{
-            "code": "error",
-            "message": "Nice try, invalid passphrase"
-        }
-
-    print(data);
-    render_template('dddd.html')
-    return {
-        "code": 'success',
-        "message": data
-    }
+    
+    return render_template('dddd.html')
+    
