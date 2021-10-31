@@ -14,7 +14,7 @@ def whatever():
     print(data);
     return {
         "code": "succss",
-        "message": data;
+        "message": data
     }
     
 
