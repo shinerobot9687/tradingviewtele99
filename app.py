@@ -1,6 +1,9 @@
+#-*- coding:utf-8 -*-
+
 import os
 import json
 import requests
+import telegram
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
@@ -16,11 +19,12 @@ def welcome():
 def whatever():
     readData = json.loads(request.data)
 
-    totalString = '종목 : ' + readData['exchange'] + '거래량 : ' + readData['volume'] + '금액 : ' + readData['price']
+    totalString = '종목 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price'])
 
-    url='https://hooks.slack.com/services/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'
-    data = {'text':totalString}
-    requests.post(url=url, json=data)
+    bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
+    chat_id = 1000903796
+
+    bot.sendMessage(chat_id=chat_id, text=totalString)
 
     print(readData)
     return {
