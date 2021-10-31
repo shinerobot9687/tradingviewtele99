@@ -48,7 +48,7 @@ def whatever():
     }
     #return render_template('dddd.html')
     
-app.run()
+#app.run()
 
 #if request.method == 'POST':
 #        data = json.loads(request.data)
