@@ -4,6 +4,11 @@ import requests
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
+def send_message(msg):
+    url='https://hooks.slack.com/services/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'
+    data = {'text':msg}
+    resp = requests.post(url=url, json=data)
+
 @app.route('/',methods=['GET'])
 def welcome():
     return render_template('index.html')
@@ -14,9 +19,8 @@ def whatever():
 
     totalString = '종목 : ' + readData['exchange'] + '거래량 : ' + readData['volume'] + '금액 : ' + readData['price']
 
-    requests.post("https://slack.com/api/chat.postMessage",
-    headers={"Authorization": "Bearer "+"xoxb-1601840097190-1605530619493-lvOwi9vuMfRXdJ7rXm9T1god"},
-    data={"channel": "#stock","text": totalString})
+    send_message(totalString)
+    
     print(readData)
     return {
         "code": "succss",
