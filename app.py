@@ -1,3 +1,4 @@
+import os
 import json
 import requests
 from flask import Flask, request, render_template
@@ -16,7 +17,7 @@ def whatever():
     requests.post("https://slack.com/api/chat.postMessage",
     headers={"Authorization": "Bearer "+"xoxb-1601840097190-1605530619493-lvOwi9vuMfRXdJ7rXm9T1god"},
     data={"channel": "#stock","text": totalString})
-    
+
     return {
         "code": "succss",
         "message": readData
