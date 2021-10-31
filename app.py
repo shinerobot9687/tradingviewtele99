@@ -4,10 +4,9 @@ import requests
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
-def send_message(msg):
-    url='https://hooks.slack.com/services/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'
-    data = {'text':msg}
-    resp = requests.post(url=url, json=data)
+
+    
+    
 
 @app.route('/',methods=['GET'])
 def welcome():
@@ -19,8 +18,10 @@ def whatever():
 
     totalString = '종목 : ' + readData['exchange'] + '거래량 : ' + readData['volume'] + '금액 : ' + readData['price']
 
-    send_message(totalString)
-    
+    url='https://hooks.slack.com/services/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'
+    data = {'text':totalString}
+    requests.post(url=url, json=data)
+
     print(readData)
     return {
         "code": "succss",
