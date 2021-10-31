@@ -24,7 +24,7 @@ def whatever():
 
     bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
     #chat_id = 1000903796
-    chat_id = '@crypptotradingviewconnect'
+    chat_id = '@cryptotradingviewconnect'
     bot.sendMessage(chat_id=chat_id, text=totalString)
     bot.sendMessage(chat_id=1000903796, text=totalString)
 
