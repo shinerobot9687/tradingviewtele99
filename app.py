@@ -18,7 +18,7 @@ def whatever():
 
     totalString = '종목 : ' + readData['exchange'] + '거래량 : ' + readData['volume'] + '금액 : ' + readData['price']
 
-    url='https://hooks.slack.com/services/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'
+    url='https://hooks.slack.com/services/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'
     data = {'text':totalString}
     requests.post(url=url, json=data)
 
