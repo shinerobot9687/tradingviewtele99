@@ -3,10 +3,7 @@ import requests
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
-
-
-
-coinInfo ={}
+#coinInfo ={}
 
 @app.route('/')
 def welcome():
