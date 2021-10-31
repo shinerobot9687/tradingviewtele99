@@ -12,9 +12,7 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET'])
 def welcome():
-    bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
-    chat_id = 1000903796
-    bot.sendMessage(chat_id=chat_id, text="23t3ygf")
+    
 
     return render_template('index.html')
 
@@ -24,7 +22,9 @@ def whatever():
 
     totalString = '종목 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price'])
 
-    
+    bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
+    chat_id = 1000903796
+    bot.sendMessage(chat_id=chat_id, text=totalString)
     
 
     print(readData)
