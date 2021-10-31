@@ -2,7 +2,6 @@
 
 import os
 import json
-import requests
 import telegram
 from flask import Flask, request, render_template
 app = Flask(__name__)
