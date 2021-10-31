@@ -16,24 +16,24 @@ def welcome():
 @app.route('/webhook',methods=['POST'])
 def whatever():
     readData = json.loads(request.data)
-    #coinInfo = {readData['exchange'] : 1}
-    global coinInfo
     
-    if coinInfo:
-        for i in coinInfo.keys():
-            if readData['exchange'] == i:
-                checkBool = True
-                break
-            else : 
-                checkBool = False
+    #global coinInfo
+    
+    #if coinInfo:
+    #    for i in coinInfo.keys():
+    #        if readData['exchange'] == i:
+    #            checkBool = True
+    #            break
+    #        else : 
+    #            checkBool = False
         
-        if checkBool == True:
-            coinInfo[i] = coinInfo[i] + 1
+    #    if checkBool == True:
+    #        coinInfo[i] = coinInfo[i] + 1
                 
-        elif checkBool == False:
-            coinInfo.update({readData['exchange'] : 1})
-    else:
-        coinInfo = {readData['exchange'] : 1}
+    #    elif checkBool == False:
+    #        coinInfo.update({readData['exchange'] : 1})
+    #else:
+    #    coinInfo = {readData['exchange'] : 1}
         
     totalString = '종목 : ' + readData['exchange'] + '거래량 : ' + readData['volume'] + '금액 : ' + readData['price']
 
