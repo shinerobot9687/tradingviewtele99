@@ -35,17 +35,17 @@ def whatever():
                 bot.sendMessage(chat_id=chat_id, text=totalString)
                 bot.sendMessage(chat_id=1000903796, text=totalString)
 
-                print(coinSym[coin], totalString)
+                print('send',coinSym[coin], totalString)
             else:
                 coinSym[coin] = coinSym[coin] + 1
-                print(coinSym[coin])
+                print(coinSym[coin],readData)
         else:
             coinSym[coin] = coinSym[coin] + 1
-            print(coinSym[coin])
+            print(coinSym[coin], readData)
 
     else:
         coinSym = {readData['exchange'] : 1}
-        print(coinSym)
+        print(coinSym, readData)
         
 
     #totalString = readData['name']+' 종목 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price'])
