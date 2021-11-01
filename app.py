@@ -22,7 +22,7 @@ def whatever():
         check = False;
         coinSymRead = readData['exchange'];
         for coin in coinSym.keys():
-            if coin == readData['exchange']:
+            if coin == coinSymRead:
                 check = True;
                 break;
         
@@ -43,7 +43,7 @@ def whatever():
                 coinSym[coinSymRead] = coinSym[coinSymRead] + 1
                 print(coinSym[coinSymRead],readData)
         else:
-            coinSym[coinSymRead] = coinSym[coinSymRead] + 1
+            coinSym = {coinSymRead : 1}
             print(coinSym[coinSymRead], readData)
 
     else:
