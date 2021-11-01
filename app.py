@@ -6,14 +6,10 @@ import telegram
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
-
-    
 coinSym = {}
 
 @app.route('/',methods=['GET'])
 def welcome():
-    
-
     return render_template('index.html')
 
 @app.route('/webhook',methods=['POST'])
