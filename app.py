@@ -20,12 +20,12 @@ def whatever():
 
     if coinSym:
         check = False;
-        coinSymRead = "";
+        coinSymRead = readData['exchange'];
         for coin in coinSym.keys():
             if coin == readData['exchange']:
                 check = True;
-                coinSymRead = readData['exchange'];
                 break;
+        
         if check == True:
             if coinSym[coinSymRead] >= 1:
                 coinSym[coinSymRead] = 0
