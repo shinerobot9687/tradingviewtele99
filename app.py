@@ -48,7 +48,7 @@ def whatever():
     #bot.sendMessage(chat_id=chat_id, text=totalString)
     #bot.sendMessage(chat_id=1000903796, text=totalString)
 
-
+    print(readData)
     return {
         "code": "succss",
         "message": readData
