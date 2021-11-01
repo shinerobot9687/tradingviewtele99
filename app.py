@@ -38,7 +38,7 @@ def whatever():
                 bot.sendMessage(chat_id=chat_id, text=totalString)
                 bot.sendMessage(chat_id=1000903796, text=totalString)
 
-                print('send',coinSym[coin], totalString)
+                print('send',coinSym[coinSymRead], totalString)
             else:
                 coinSym[coinSymRead] = coinSym[coinSymRead] + 1
                 print(coinSym[coinSymRead],readData)
