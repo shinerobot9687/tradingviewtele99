@@ -39,7 +39,7 @@ def whatever():
                 bot.sendMessage(chat_id=1000903796, text=totalString)
 
                 print('send',coinSym[coinSymRead], totalString)
-            else:
+            elif coinSym[coinSymRead] < 1:
                 coinSym[coinSymRead] = coinSym[coinSymRead] + 1
                 print(coinSym[coinSymRead],readData)
         else:
