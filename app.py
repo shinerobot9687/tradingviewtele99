@@ -20,12 +20,15 @@ def whatever():
 
     if coinSym:
         check = False;
+        coinSymRead = "";
         for coin in coinSym.keys():
             if coin == readData['exchange']:
                 check = True;
+                coinSymRead = readData['exchange'];
+                break;
         if check == True:
-            if coinSym[coin] >= 1:
-                coinSym[coin] = 0
+            if coinSym[coinSymRead] >= 1:
+                coinSym[coinSymRead] = 0
                 #print("reset",coinSym)
 
                 totalString = readData['name']+' 종목 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price'])
@@ -37,11 +40,11 @@ def whatever():
 
                 print('send',coinSym[coin], totalString)
             else:
-                coinSym[coin] = coinSym[coin] + 1
-                print(coinSym[coin],readData)
+                coinSym[coinSymRead] = coinSym[coinSymRead] + 1
+                print(coinSym[coinSymRead],readData)
         else:
-            coinSym[coin] = coinSym[coin] + 1
-            print(coinSym[coin], readData)
+            coinSym[coinSymRead] = coinSym[coinSymRead] + 1
+            print(coinSym[coinSymRead], readData)
 
     else:
         coinSym = {readData['exchange'] : 1}
