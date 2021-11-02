@@ -15,8 +15,12 @@ def welcome():
 @app.route('/webhook',methods=['POST'])
 def whatever():
     readData = json.loads(request.data)
-
-    if readData['arbitrage']:
+    chk = False;
+    for keyread in readData.keys():
+        if keyread == 'arbitrage':
+            chk = True
+    
+    if chk == True:
         print(readData);
     else:
         global coinSym
