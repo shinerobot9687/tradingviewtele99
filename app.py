@@ -27,8 +27,7 @@ def whatever():
     if chk == True:
         coinName = readData['arbitrage'].split(',')
         coinName.pop();
-        print('arbi', coinName)
-        #print(readData);
+
     else:
         global coinSym
 
@@ -49,6 +48,10 @@ def whatever():
                     bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
                     chat_id = '@cryptotradingviewconnect'
                     bot.sendMessage(chat_id=chat_id, text=totalString)
+
+                    for keyread in coinName:    
+                        if keyread in readData['exchange']:
+                            totalString = '✅ '+ readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
                     bot.sendMessage(chat_id=1000903796, text=totalString)
 
                     print('send',totalString)
