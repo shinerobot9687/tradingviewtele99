@@ -10,7 +10,10 @@ coinSym = {}
 
 @app.route('/',methods=['GET'])
 def welcome():
-    return render_template('index.html')
+    my_res = flask.Response("차단")
+    my_res.headers["Access-Control-Allow-Origin"] = "*"
+    render_template('index.html')
+    return my_res
 
 @app.route('/webhook',methods=['POST'])
 def whatever():
