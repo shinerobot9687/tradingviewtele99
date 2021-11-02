@@ -26,7 +26,7 @@ def whatever():
     
     if chk == True:
         coinName = readData['arbitrage'].split(',')
-
+        coinName.pop();
         print('arbi', coinName)
         #print(readData);
     else:
