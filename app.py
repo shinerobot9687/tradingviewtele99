@@ -4,16 +4,16 @@ import os
 import json
 import telegram
 from flask import Flask, request, render_template
-app = Flask(__name__)
+from flask_cors import CORS
 
+
+app = Flask(__name__)
+CORS(app)
 coinSym = {}
 
-@app.route('/',methods=['GET'])
+@app.route('/',methods=['GET', 'OPTIONS'])
 def welcome():
-    my_res = flask.Response("차단")
-    my_res.headers["Access-Control-Allow-Origin"] = "*"
-    render_template('index.html')
-    return my_res
+    return render_template('index.html')
 
 @app.route('/webhook',methods=['POST'])
 def whatever():
