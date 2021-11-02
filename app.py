@@ -19,15 +19,18 @@ def welcome():
 def whatever():
     readData = json.loads(request.data)
     chk = False;
+    chkk = False;
     for keyread in readData.keys():
         if keyread == 'arbitrage':
             chk = True
+        if keyread == 'exchange':
+            chkk = True
     
     if chk == True:
         coinName = readData['arbitrage'].split(',')
         coinName.pop();
 
-    else:
+    elif chkk == True:
         global coinSym
 
         if coinSym:
