@@ -21,7 +21,6 @@ def whatever():
     chk = False;
     for keyread in readData.keys():
         if keyread == 'arbitrage':
-            
             chk = True
     
     if chk == True:
