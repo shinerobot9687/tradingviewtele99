@@ -21,10 +21,14 @@ def whatever():
     chk = False;
     for keyread in readData.keys():
         if keyread == 'arbitrage':
+            
             chk = True
     
     if chk == True:
-        print(readData);
+        coinName = readData['arbitrage'].split(',')
+
+        print('arbi', coinName)
+        #print(readData);
     else:
         global coinSym
 
