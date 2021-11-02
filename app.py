@@ -29,6 +29,7 @@ def whatever():
     if chk == True:
         coinName = readData['arbitrage'].split(',')
         coinName.pop();
+        print('Read OK',coinName);
 
     elif chkk == True:
         global coinSym
