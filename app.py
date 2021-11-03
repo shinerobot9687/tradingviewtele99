@@ -18,7 +18,8 @@ def welcome():
 
 @app.route('/webhook',methods=['POST'])
 def whatever():
-    readData = json.loads(request.data)
+   
+    readData = json.loads(request.data.replace("'", "\""))
     chk = False;
     chkk = False;
     global coinName
