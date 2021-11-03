@@ -20,6 +20,7 @@ def whatever():
     readData = json.loads(request.data)
     chk = False;
     chkk = False;
+    coinName =[];
     for keyread in readData.keys():
         if keyread == 'arbitrage':
             chk = True
