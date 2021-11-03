@@ -48,17 +48,18 @@ def whatever():
 
                     totalString = readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
 
+                    checkarrow = ""
+                    for keyread in coinName:    
+                        if keyread in readData['exchange']:
+                            checkarrow  = '✅ ' #'✅ '+ readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
+                    
+                    #time.sleep(5)
+
                     bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
                     chat_id = '@cryptotradingviewconnect'
                     bot.sendMessage(chat_id=chat_id, text=totalString)
-
-                    for keyread in coinName:    
-                        if keyread in readData['exchange']:
-                            totalString = '✅ '+ readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
-                    time.sleep(1)
-                    bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
                     chat_id = '1000903796'
-                    bot.sendMessage(chat_id=chat_id, text=totalString)
+                    bot.sendMessage(chat_id=chat_id, text=(checkarrow + totalString))
 
                     print('send',totalString)
                 elif coinSym[coinSymRead] < 1:
