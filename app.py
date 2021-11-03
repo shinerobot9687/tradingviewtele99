@@ -10,6 +10,7 @@ import time
 app = Flask(__name__)
 CORS(app)
 coinSym = {}
+coinName =[]
 
 @app.route('/',methods=['GET', 'OPTIONS'])
 def welcome():
@@ -20,7 +21,7 @@ def whatever():
     readData = json.loads(request.data)
     chk = False;
     chkk = False;
-    coinName =[];
+    global coinName
     for keyread in readData.keys():
         if keyread == 'arbitrage':
             chk = True
@@ -31,8 +32,7 @@ def whatever():
         coinName = readData['arbitrage'].split(',')
         coinName.pop();
         print('Read OK',coinName);
-        for keyread in coinName:
-            print('1',keyread)
+        
 
     elif chkk == True:
         global coinSym
@@ -52,9 +52,9 @@ def whatever():
                     totalString = readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
 
                     checkarrow = ""
-                    #for keyread in coinName:    
-                    #    if keyread in readData['exchange']:
-                    #        checkarrow  = '✅ ' #'✅ '+ readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
+                    for keyread in coinName:    
+                        if keyread in readData['exchange']:
+                            checkarrow  = '✅ ' #'✅ '+ readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
                     
                     #time.sleep(5)
 
