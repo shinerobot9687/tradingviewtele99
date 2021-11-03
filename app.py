@@ -18,8 +18,9 @@ def welcome():
 
 @app.route('/webhook',methods=['POST'])
 def whatever():
-   
-    readData = json.loads(request.data.replace("'", "\""))
+    requestData = request.data;
+    print(requestData);
+    readData = json.loads(requestData.replace("'", "\""))
     chk = False;
     chkk = False;
     global coinName
@@ -87,7 +88,7 @@ def whatever():
     #bot.sendMessage(chat_id=chat_id, text=totalString)
     #bot.sendMessage(chat_id=1000903796, text=totalString)
 
-    print("chk",readData)
+    #print("chk",readData)
     return {
         "code": "succss",
         "message": readData
