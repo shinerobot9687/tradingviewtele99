@@ -18,7 +18,7 @@ def welcome():
 
 @app.route('/webhook',methods=['POST'])
 def whatever():
-    requestData = request.data;
+    requestData = request.data.encoding;
     print(requestData);
     readData = json.loads(requestData)
     chk = False;
