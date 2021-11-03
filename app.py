@@ -20,7 +20,7 @@ def welcome():
 def whatever():
     requestData = request.data;
     print(requestData);
-    readData = json.loads(requestData.replace("'", "\""))
+    readData = json.loads(requestData)
     chk = False;
     chkk = False;
     global coinName
