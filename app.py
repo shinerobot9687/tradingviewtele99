@@ -5,7 +5,7 @@ import json
 import telegram
 from flask import Flask, request, render_template
 from flask_cors import CORS
-
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -55,6 +55,7 @@ def whatever():
                     for keyread in coinName:    
                         if keyread in readData['exchange']:
                             totalString = '✅ '+ readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
+                    time.sleep(1)
                     bot.sendMessage(chat_id=1000903796, text=totalString)
 
                     print('send',totalString)
