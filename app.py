@@ -47,7 +47,7 @@ def whatever():
                     break;
             
             if check == True:
-                if coinSym[coinSymRead] >= 1:
+                if coinSym[coinSymRead] >= 2:
                     coinSym[coinSymRead] = 0
 
                     totalString = readData['name']+' | 코인 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
@@ -66,7 +66,7 @@ def whatever():
                     bot.sendMessage(chat_id=chat_id, text=(checkarrow + totalString))
 
                     print('send',totalString)
-                elif coinSym[coinSymRead] < 1:
+                elif coinSym[coinSymRead] < 2:
                     coinSym[coinSymRead] = coinSym[coinSymRead] + 1
                     print('sum', coinSym[coinSymRead],coinSymRead)
 
@@ -77,17 +77,6 @@ def whatever():
         else:
             coinSym = {readData['exchange'] : 1}
             print('add', coinSym[readData['exchange']],readData['exchange'])
-        
-        
-
-    #totalString = readData['name']+' 종목 : ' + readData['exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price'])
-
-    #bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
-    #chat_id = '@cryptotradingviewconnect'
-    #bot.sendMessage(chat_id=chat_id, text=totalString)
-    #bot.sendMessage(chat_id=1000903796, text=totalString)
-
-    #print("chk",readData)
     return {
         "code": "succss",
         "message": readData
