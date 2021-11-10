@@ -59,7 +59,7 @@ def whatever():
                     
                     #time.sleep(5)
 
-                    bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
+                    bot = telegram.Bot(token='2105654811:AAEpHpQLLeE-e2qQ6s-kJ7MDeQV54iZJbo8')
                     chat_id = '@cryptotradingviewconnect'
                     bot.sendMessage(chat_id=chat_id, text=totalString)
                     chat_id = '1000903796'
