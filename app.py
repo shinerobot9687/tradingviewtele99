@@ -33,6 +33,7 @@ def whatever():
             chk = False
             chkk = False
             chkkk = True
+            print('test OK',readData);
     
     if chk == True:
         coinName = readData['arbitrage'].split(',')
