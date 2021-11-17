@@ -87,7 +87,7 @@ def whatever():
 
         bot = telegram.Bot(token='2105654811:AAEpHpQLLeE-e2qQ6s-kJ7MDeQV54iZJbo8')
         chat_id = '-1001678871735'
-        bot.sendMessage(chat_id=chat_id, text=(checkarrow + totalString))
+        bot.sendMessage(chat_id=chat_id, text=(totalString))
 
 
     return {
