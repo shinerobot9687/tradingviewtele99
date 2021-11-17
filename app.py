@@ -22,12 +22,17 @@ def whatever():
     readData = json.loads(request.data)
     chk = False;
     chkk = False;
+    chkkk = False;
     global coinName
     for keyread in readData.keys():
         if keyread == 'arbitrage':
             chk = True
         if keyread == 'exchange':
             chkk = True
+        if keyread == 'moving_exchange':
+            chk = False
+            chkk = False
+            chkkk = True
     
     if chk == True:
         coinName = readData['arbitrage'].split(',')
@@ -37,7 +42,6 @@ def whatever():
 
     elif chkk == True:
         global coinSym
-
         if coinSym:
             check = False;
             coinSymRead = readData['exchange'];
@@ -69,14 +73,23 @@ def whatever():
                 elif coinSym[coinSymRead] < 2:
                     coinSym[coinSymRead] = coinSym[coinSymRead] + 1
                     print('sum', coinSym[coinSymRead],coinSymRead)
-
             else:
                 coinSym.update({coinSymRead : 1})
                 print('add', coinSym[coinSymRead], coinSymRead)
-                
         else:
             coinSym = {readData['exchange'] : 1}
             print('add', coinSym[readData['exchange']],readData['exchange'])
+
+    elif chkkk == True:
+        chkkk = False;
+        totalString = '🔔 코인 : ' + readData['moving_exchange'] + ' 거래량 : ' + str(readData['volume']) + ' 금액 : ' + str(readData['price']) + ' 시간 : ' + str(readData['time'])
+        print('MA send : ',totalString)
+
+        bot = telegram.Bot(token='2105654811:AAEpHpQLLeE-e2qQ6s-kJ7MDeQV54iZJbo8')
+        chat_id = '-1001678871735'
+        bot.sendMessage(chat_id=chat_id, text=(checkarrow + totalString))
+
+
     return {
         "code": "succss",
         "message": readData
