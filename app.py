@@ -23,8 +23,8 @@ def welcome():
 @app.route('/webhook',methods=['POST'])
 def whatever():
     
-    #readData = json.loads(request.data)
-    print('read OK',request.data);
+    readData = json.loads(request.data)
+    print('read OK',readData);
 
     #bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
     #chat_id = '-1001155984303'
