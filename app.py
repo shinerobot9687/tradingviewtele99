@@ -1,4 +1,8 @@
+#실행 flask run
+
 #-*- coding:utf-8 -*-
+
+
 
 import os
 import json
@@ -21,9 +25,10 @@ def whatever():
     
     readData = json.loads(request.data)
     print('test OK',readData);
+
     
-    
-        
+
+      
     return {
         "code": "succss",
         "messge": readData
@@ -33,3 +38,7 @@ def whatever():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
+#  bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
+# chat_id = '-1001155984303'
+# bot.sendMessage(chat_id=chat_id, text=("ddsds"))
