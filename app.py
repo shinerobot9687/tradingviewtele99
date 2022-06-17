@@ -24,13 +24,15 @@ def welcome():
 def whatever():
     
     readData = json.loads(request.data)
-    print('read OK',readData);
+    coinSymRead = readData['moving_exchange'].split('{');
+    
+    print('read OooK',coinSymRead);
 
-    #bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
-    #chat_id = '-1001155984303'
-    #bot.sendMessage(chat_id=chat_id, text=(readData))    
+    bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
+    chat_id = '-1001155984303'
+    bot.sendMessage(chat_id=chat_id, text=(coinSymRead))    
 
-    #readData=""
+
 
       
     return {
