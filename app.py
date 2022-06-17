@@ -27,7 +27,7 @@ def whatever():
     readData = json.loads(request.data)
     coinSymRead = readData['moving_exchange'].split('{')[2].split('}')[0];
     
-    print('read OooK',coinSymRead);
+    print('readOK',coinSymRead);
 
     bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
     chat_id = '-1001155984303'
