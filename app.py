@@ -18,13 +18,14 @@ coinName =[]
 
 @app.route('/',methods=['GET', 'OPTIONS'])
 def welcome():
+    
     return render_template('index.html')
 
 @app.route('/webhook',methods=['POST'])
 def whatever():
     
     readData = json.loads(request.data)
-    coinSymRead = readData['moving_exchange'].split('{');
+    coinSymRead = readData['moving_exchange'].split('{')[2].split('}')[0];
     
     print('read OooK',coinSymRead);
 
