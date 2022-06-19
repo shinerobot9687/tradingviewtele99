@@ -30,7 +30,9 @@ def whatever():
     print('readOK',coinSymRead);
 
     bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
-    chat_id = '-1001155984303'
+    # -1001788038105 <- 개인
+    # -1001155984303 <- 거북봇
+    chat_id = '-1001788038105'
     bot.sendMessage(chat_id=chat_id, text=(coinSymRead))    
 
 
