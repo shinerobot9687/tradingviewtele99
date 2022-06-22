@@ -32,9 +32,11 @@ def whatever():
     bot = telegram.Bot(token='2075219807:AAGv_N_NmKXAie0F-bhzOR8woQ7QV-W-_7Y')
     # -1001788038105 <- 개인
     # -1001155984303 <- 거북봇
+    # -1001799414296 <- 랄라
     chat_id = '-1001788038105'
     bot.sendMessage(chat_id=chat_id, text=(coinSymRead))    
-
+    chat_id = '-1001799414296'
+    bot.sendMessage(chat_id=chat_id, text=(coinSymRead))   
 
 
       
